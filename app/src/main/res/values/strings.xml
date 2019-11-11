@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">BaseMVPKotlin</string>
-    <string name="share">Chia sẻ</string>
-    <string name="dataError">Tải dữ liệu bị lỗi. Vui lòng thử lại</string>
-    <string name="no_data">Không tìm thấy dữ liệu. Vui lòng thử lại</string>
+    <string name="share">Share</string>
+    <string name="dataError">Can not load data. Please try again</string>
+    <string name="no_data">Data not found. Please try again.</string>
+
+    <string name="navigation_top_headline">Top Headline</string>
+    <string name="navigation_news">News</string>
+    <string name="navigation_profile">Profile</string>
 </resources>

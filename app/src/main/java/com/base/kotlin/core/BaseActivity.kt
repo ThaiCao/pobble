@@ -65,12 +65,12 @@ abstract class BaseActivity : AppCompatActivity(){
     /**
      * set title
      */
-    public abstract fun setTitle(title : String)
+    abstract fun setTitle(title : String)
 
     /**
      * set visible or invisible back button in toolbar
      */
-    public abstract fun displayBackButtonToolbar(isDisplay : Boolean)
+    abstract fun displayBackButtonToolbar(isDisplay : Boolean)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

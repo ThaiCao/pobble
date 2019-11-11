@@ -99,4 +99,10 @@ public abstract class BaseFragment : Fragment() {
             (activity as BaseActivity).pushFragment(fragment, clearStack, addBackStack, animation)
         }
     }
+
+    fun setTitle(title: String) {
+        if (activity is BaseActivity) {
+            (activity as BaseActivity).setTitle(title)
+        }
+    }
 }

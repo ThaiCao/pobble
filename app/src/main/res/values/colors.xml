@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="bgBottomNavigation">#1976D2</color>
+
     <color name="color_amber_100">#FFECB3</color>
     <color name="color_amber_200">#FFE082</color>
     <color name="color_amber_300">#FFD54F</color>

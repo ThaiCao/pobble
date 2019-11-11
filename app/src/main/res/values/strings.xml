@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BaseMVPKotlin</string>
+    <string name="share">Chia sẻ</string>
+    <string name="dataError">Tải dữ liệu bị lỗi. Vui lòng thử lại</string>
+    <string name="no_data">Không tìm thấy dữ liệu. Vui lòng thử lại</string>
+</resources>

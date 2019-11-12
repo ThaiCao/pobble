@@ -13,6 +13,7 @@ import com.base.kotlin.core.BaseListAdapter
 import com.base.kotlin.core.BaseMvpFragment
 import com.base.kotlin.data.bean.response.GetHeadlineResponse
 import com.base.kotlin.data.bean.response.ResponseError
+import com.base.kotlin.ui.activity.HomeActivity
 import com.base.kotlin.ui.adapter.HeadlineAdapter
 import com.base.kotlin.ui.contract.HeadlineFragmentContract
 import com.base.kotlin.ui.presenter.HeadlineFragmentPresenter
@@ -60,26 +61,35 @@ class HeadlineFragment : BaseMvpFragment<HeadlineFragmentContract.Presenter>(), 
 
     override fun processLogic() {
         super.processLogic()
+        showLoading()
         mPresenter!!.getHeadlineData("us","business")
     }
 
     override fun showLoading() {
-
+        if(activity is HomeActivity){
+            (activity as HomeActivity).showLoading()
+        }
     }
 
     override fun hideLoading() {
-
+        if(activity is HomeActivity){
+            (activity as HomeActivity).hideLoading()
+        }
     }
 
     override fun onGetHeadlineSuccess(data: GetHeadlineResponse) {
-        if(view !=null && data!=null && data.articles !=null){
-            tvNoData.visibility = View.GONE
-            adapter.refreshItem(data.articles!!)
+        if(view !=null ){
+            hideLoading()
+            if(data?.articles != null){
+                tvNoData.visibility = View.GONE
+                adapter.refreshItem(data.articles!!)
+            }
         }
     }
 
     override fun onGetHeadlineError(error: ResponseError) {
         if(view !=null){
+            hideLoading()
             tvNoData.visibility = View.VISIBLE
         }
     }

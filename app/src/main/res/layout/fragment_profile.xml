@@ -1,18 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.activity.HomeActivity">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+    >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/user_photo_default"
+            android:id="@+id/user_img"/>
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimaryColor"
+            android:text="@string/add_photo"
+            android:id="@+id/add_photo_tv"/>
+    </LinearLayout>
 
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Profile"
-        android:textSize="@dimen/text_size_22sp"/>
+        android:gravity="center"
+        android:text="@string/personal"
+        android:textColor="@color/textPrimaryColor"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margin_10dp"/>
 
-</RelativeLayout>
+    <include layout="@layout/layout_horizon_item" />
+
+    <LinearLayout
+        android:id="@+id/name_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40dp"
+    android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:text="@string/name"
+            android:textColor="@color/textPrimaryColor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:textColor="@color/textPrimaryColor" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizon_item" />
+
+    <LinearLayout
+        android:id="@+id/display_name_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:text="@string/display_name"
+            android:textColor="@color/textPrimaryColor" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtDisplayName"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:textColor="@color/textPrimaryColor" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizon_item" />
+
+    <LinearLayout
+        android:id="@+id/mobile_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:text="@string/mobile_number"
+            android:textColor="@color/textPrimaryColor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:inputType="number"
+                android:textColor="@color/textPrimaryColor" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizon_item" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textPrimaryColor"
+        android:layout_gravity="center_horizontal"
+        android:text="Save"/>
+</LinearLayout>

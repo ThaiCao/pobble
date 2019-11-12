@@ -9,22 +9,28 @@ import com.base.kotlin.ui.contract.HomeActivityContract
 import com.base.kotlin.ui.fragment.HomeFragment
 import com.base.kotlin.ui.presenter.HomeActivityPresenter
 import android.support.design.widget.BottomNavigationView
+import android.view.View
+import android.widget.FrameLayout
+import butterknife.BindView
 
 
 open class HomeActivity: BaseMvpActivity<HomeActivityContract.Presenter>(), HomeActivityContract.View {
 
     lateinit var toolbar: ActionBar
 
+    @BindView(R.id.progressBar)
+    lateinit var progressBar : FrameLayout
+
     override fun initData(savedInstanceState: Bundle?) {
 
     }
 
     override fun showLoading() {
-
+        progressBar.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
-
+        progressBar.visibility = View.GONE
     }
 
     override fun showError(message: String?) {

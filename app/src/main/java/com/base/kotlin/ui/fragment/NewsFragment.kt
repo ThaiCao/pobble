@@ -12,6 +12,7 @@ import com.base.kotlin.core.BaseListAdapter
 import com.base.kotlin.core.BaseMvpFragment
 import com.base.kotlin.data.bean.response.NewsResponse
 import com.base.kotlin.data.bean.response.ResponseError
+import com.base.kotlin.ui.activity.HomeActivity
 import com.base.kotlin.ui.adapter.FilterItemclickListener
 import com.base.kotlin.ui.adapter.NewsAdapter
 import com.base.kotlin.ui.contract.NewsFragmentContract
@@ -71,11 +72,15 @@ class NewsFragment : BaseMvpFragment<NewsFragmentContract.Presenter>(), NewsFrag
     }
 
     override fun showLoading() {
-
+        if(activity is HomeActivity){
+            (activity as HomeActivity).showLoading()
+        }
     }
 
     override fun hideLoading() {
-
+        if(activity is HomeActivity){
+            (activity as HomeActivity).hideLoading()
+        }
     }
 
     private fun displayFilter(){
@@ -92,20 +97,24 @@ class NewsFragment : BaseMvpFragment<NewsFragmentContract.Presenter>(), NewsFrag
     }
 
     fun onLoadDatabyFilter(value: String){
-        Log.e("TEST_DATA","NEWPAGE onLoadDatabyFilter: " + value)
+        showLoading()
         mPresenter!!.getNewsData(value,"2019-11-11","2019-11-11","popularity")
     }
 
     override fun onGetNewsError(error: ResponseError) {
         if(view !=null){
+            hideLoading()
             tvNoData.visibility = View.VISIBLE
         }
     }
 
     override fun onGetNewsSuccess(data: NewsResponse) {
-        if(view !=null && data!=null && data.articles !=null){
-            tvNoData.visibility = View.GONE
-            adapter.refreshItem(data.articles!!)
+        if(view !=null ){
+            hideLoading()
+            if(data?.articles != null){
+                tvNoData.visibility = View.GONE
+                adapter.refreshItem(data.articles!!)
+            }
         }
     }
 

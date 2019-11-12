@@ -5,6 +5,9 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="bgBottomNavigation">#1976D2</color>
+    <color name="textPrimaryColor">#212121</color>
+    <color name="lightGray">#EEEEEF</color>
+    <color name="color_grey_opacity_20">#80212121</color>
 
     <color name="color_amber_100">#FFECB3</color>
     <color name="color_amber_200">#FFE082</color>

@@ -42,6 +42,7 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "APP_HOST_URL", "\"https://newsapi.org/v2/\""
+            buildConfigField "String", "APP_API_KEY", "\"a5e3ba5fc023436088fc1750cabe2bc9\""
 
             minifyEnabled false
             debuggable true
@@ -52,6 +53,7 @@ android {
         //production
         release {
             buildConfigField "String", "APP_HOST_URL", "\"https://newsapi.org/v2/\""
+            buildConfigField "String", "APP_API_KEY", "\"a5e3ba5fc023436088fc1750cabe2bc9\""
 
             minifyEnabled true
             debuggable false
@@ -78,7 +80,7 @@ dependencies {
 
     //network
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
-    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
 
     //leakCanary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary"

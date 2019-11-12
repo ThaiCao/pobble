@@ -2,7 +2,7 @@ package com.base.kotlin.ui.contract
 
 import com.base.kotlin.core.BaseContract
 
-interface ProfileFragmentContract {
+interface ArticleFragmentContract {
 
     interface Model: BaseContract.BaseModel {
 
@@ -11,6 +11,6 @@ interface ProfileFragmentContract {
     interface View : BaseContract.BaseView{
     }
 
-    interface Presenter: BaseContract.BasePresenter<BaseContract.BaseView>{
+    interface Presenter : BaseContract.BasePresenter<BaseContract.BaseView>{
     }
 }

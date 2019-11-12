@@ -1,14 +1,22 @@
 package com.base.kotlin.core
 
+import io.reactivex.disposables.CompositeDisposable
 import java.lang.ref.WeakReference
 
-open class BaseMvpPresenter <T : BaseContract.BaseView> : BaseContract.BasePresenter<T>{
+open class BaseMvpPresenter < M : BaseMvpModel ,T : BaseContract.BaseView> : BaseContract.BasePresenter<T>{
 
     private var viewRef : WeakReference<T>? = null
+    protected var mDisposable: CompositeDisposable? = null
+    protected var model: M? = null
 
+    constructor(view: T) {
+        attachView(view)
+        mDisposable = CompositeDisposable()
+    }
 
     override fun attachView(view: T) {
-        viewRef = WeakReference<T>(view)
+        viewRef = WeakReference(view)
+
     }
 
     override fun detachView() {
@@ -16,7 +24,10 @@ open class BaseMvpPresenter <T : BaseContract.BaseView> : BaseContract.BasePrese
             viewRef!!.clear()
             viewRef = null
         }
-
+        if (mDisposable != null) {
+            mDisposable!!.clear()
+            mDisposable!!.dispose()
+        }
     }
 
     override fun start() {

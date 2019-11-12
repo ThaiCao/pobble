@@ -14,7 +14,7 @@ interface HomeActivityContract {
 
      }
 
-   interface Presenter<View> : BaseContract.BasePresenter<BaseContract.BaseView> {
+   interface Presenter : BaseContract.BasePresenter<BaseContract.BaseView> {
 
     }
 }

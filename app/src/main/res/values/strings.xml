@@ -7,4 +7,6 @@
     <string name="navigation_top_headline">Top Headline</string>
     <string name="navigation_news">News</string>
     <string name="navigation_profile">Profile</string>
+
+    <string name="originalLink">Click here to get full detail</string>
 </resources>

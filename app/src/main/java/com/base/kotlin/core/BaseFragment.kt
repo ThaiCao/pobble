@@ -63,7 +63,9 @@ public abstract class BaseFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-        unbinder.unbind()
+        if(unbinder !=null){
+            unbinder.unbind()
+        }
     }
 
     override fun onStart() {

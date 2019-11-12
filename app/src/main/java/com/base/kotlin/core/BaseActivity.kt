@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.widget.Toolbar
 import butterknife.ButterKnife
 import butterknife.Unbinder
+import java.lang.Exception
 
 abstract class BaseActivity : AppCompatActivity(){
 
@@ -100,8 +101,14 @@ abstract class BaseActivity : AppCompatActivity(){
      * clear all fragments
      */
     protected fun clearAllFragments(){
-        while(supportFragmentManager.backStackEntryCount >0){
-            supportFragmentManager.popBackStackImmediate()
+        try{
+            if(supportFragmentManager !=null){
+                while(supportFragmentManager.backStackEntryCount >0){
+                    supportFragmentManager.popBackStackImmediate()
+                }
+            }
+        }catch (ex: Exception){
+
         }
     }
 

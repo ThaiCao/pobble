@@ -11,7 +11,7 @@ import com.base.kotlin.ui.presenter.HomeActivityPresenter
 import android.support.design.widget.BottomNavigationView
 
 
-open class HomeActivity: BaseMvpActivity<HomeActivityContract.Presenter<HomeActivityContract.View>>(), HomeActivityContract.View {
+open class HomeActivity: BaseMvpActivity<HomeActivityContract.Presenter>(), HomeActivityContract.View {
 
     lateinit var toolbar: ActionBar
 
@@ -35,8 +35,8 @@ open class HomeActivity: BaseMvpActivity<HomeActivityContract.Presenter<HomeActi
         pushFragment(HomeFragment(), true, true, true)
     }
 
-    override fun bindPresenter(): HomeActivityContract.Presenter<HomeActivityContract.View> {
-        return HomeActivityPresenter()
+    override fun bindPresenter(): HomeActivityContract.Presenter {
+        return HomeActivityPresenter(this)
     }
 
     override fun setupToolbar(toolbar: Toolbar) {

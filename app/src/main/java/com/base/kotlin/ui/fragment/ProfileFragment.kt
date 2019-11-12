@@ -6,10 +6,10 @@ import com.base.kotlin.core.BaseMvpFragment
 import com.base.kotlin.ui.contract.ProfileFragmentContract
 import com.base.kotlin.ui.presenter.ProfileFragmentPresenter
 
-class ProfileFragment : BaseMvpFragment<ProfileFragmentContract.Presenter<ProfileFragmentContract.View>>(), ProfileFragmentContract.View{
+class ProfileFragment : BaseMvpFragment<ProfileFragmentContract.Presenter>(), ProfileFragmentContract.View{
 
-    override fun bindPresenter(): ProfileFragmentContract.Presenter<ProfileFragmentContract.View> {
-        return ProfileFragmentPresenter()
+    override fun bindPresenter(): ProfileFragmentContract.Presenter {
+        return ProfileFragmentPresenter(this)
     }
 
     override fun getLayoutId(): Int {

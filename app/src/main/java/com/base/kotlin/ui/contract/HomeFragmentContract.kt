@@ -11,6 +11,6 @@ interface HomeFragmentContract {
     interface View : BaseContract.BaseView{
     }
 
-    interface Presenter<View> : BaseContract.BasePresenter<BaseContract.BaseView>{
+    interface Presenter : BaseContract.BasePresenter<BaseContract.BaseView>{
     }
 }

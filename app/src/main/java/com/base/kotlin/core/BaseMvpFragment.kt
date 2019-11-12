@@ -1,10 +1,11 @@
 package com.base.kotlin.core
 
+
 abstract class BaseMvpFragment <T : BaseContract.BasePresenter<BaseContract.BaseView>> : BaseFragment(), BaseContract.BaseView{
 
     protected var mPresenter :T? = null
 
-    protected abstract fun bindPresenter() : T
+    protected abstract fun bindPresenter() : T?
 
     override fun processLogic() {
         mPresenter = bindPresenter()

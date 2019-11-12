@@ -1,6 +1,7 @@
 package com.base.kotlin.data.bean.response
 
-class BaseResponse {
-
+open class BaseResponse {
+    var status: String? = null
+    var totalResults: Int = 0
 
 }

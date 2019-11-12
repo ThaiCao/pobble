@@ -12,13 +12,13 @@ import com.base.kotlin.ui.contract.HomeFragmentContract
 import com.base.kotlin.ui.presenter.HomeFragmentPresenter
 
 
-class HomeFragment : BaseMvpFragment<HomeFragmentContract.Presenter<HomeFragmentContract.View>>(), HomeFragmentContract.View{
+class HomeFragment : BaseMvpFragment<HomeFragmentContract.Presenter>(), HomeFragmentContract.View{
 
     @BindView(R.id.navigation)
     lateinit var navigation: BottomNavigationView
 
-    override fun bindPresenter(): HomeFragmentContract.Presenter<HomeFragmentContract.View> {
-        return HomeFragmentPresenter()
+    override fun bindPresenter(): HomeFragmentContract.Presenter {
+        return HomeFragmentPresenter(this)
     }
 
     override fun getLayoutId(): Int {
